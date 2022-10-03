@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Timezones';
 
-  currentTimeZone = 'Asia/Dubai';
+  currentTimeZone = 'Africa/Abidjan';
 
   setSelectedTimeZone(timeZone: string) {
     this.currentTimeZone = timeZone;
