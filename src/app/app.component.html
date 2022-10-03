@@ -1,0 +1,8 @@
+<h1>{{ title }}</h1>
+
+<app-timezone
+  *ngFor="let timeZone of timeZones"
+  [givenTimeZone]="timeZone"
+  [isActualTimeZone]="timeZone === currentTimeZone ? true : false"
+  (timeZoneChange)="setSelectedTimeZone($event)"
+></app-timezone>

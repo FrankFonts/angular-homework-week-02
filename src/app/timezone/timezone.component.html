@@ -1,0 +1,28 @@
+<div [style]="{ 'border-top': '1px solid currentColor', padding: '0 0 16px' }">
+  <p>
+    <span>
+      {{ givenTimeZone }}
+    </span>
+    <span [style]="{ color: 'red' }" *ngIf="isActualTimeZone"
+      >Actual timezone</span
+    >
+    <br />
+    {{ timeInTimeZone }}
+  </p>
+  <button
+    type="button"
+    (click)="refreshTime()"
+    [style]="{ 'margin-right': '8px', 'user-select': 'none' }"
+  >
+    Refresh
+  </button>
+  <button
+    type="button"
+    [disabled]="isActualTimeZone"
+    [innerHTML]="
+      isActualTimeZone ? 'Actual timezone' : 'Select as actual timezone'
+    "
+    (click)="selectAsCurrentTimeZone(this.givenTimeZone)"
+    [style]="{ 'user-select': 'none' }"
+  ></button>
+</div>
